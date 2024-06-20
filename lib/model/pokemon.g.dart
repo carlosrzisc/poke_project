@@ -8,7 +8,7 @@ part of 'pokemon.dart';
 
 _$PokemonImpl _$$PokemonImplFromJson(Map<String, dynamic> json) =>
     _$PokemonImpl(
-      id: json['id'] as String? ?? '0',
+      id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       url: json['url'] as String?,
       height: (json['height'] as num?)?.toInt(),

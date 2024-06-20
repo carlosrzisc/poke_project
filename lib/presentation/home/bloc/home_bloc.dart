@@ -17,7 +17,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final PokemonRepository _pokemonRepository;
 
   Future<void> _onLoad(_Load event, Emitter<HomeState> emit) async {
-    if (state is _LoadInProgress) return;
+    if (state is LoadInProgress) return;
 
     emit(const HomeState.loadInProgress());
     _pokemonRepository.loadMorePokemon();

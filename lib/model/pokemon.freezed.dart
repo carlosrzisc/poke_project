@@ -20,7 +20,7 @@ Pokemon _$PokemonFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Pokemon {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   int? get height => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $PokemonCopyWith<$Res> {
   factory $PokemonCopyWith(Pokemon value, $Res Function(Pokemon) then) =
       _$PokemonCopyWithImpl<$Res, Pokemon>;
   @useResult
-  $Res call({String id, String name, String? url, int? height, int? weight});
+  $Res call({String? id, String name, String? url, int? height, int? weight});
 }
 
 /// @nodoc
@@ -52,17 +52,17 @@ class _$PokemonCopyWithImpl<$Res, $Val extends Pokemon>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = null,
     Object? url = freezed,
     Object? height = freezed,
     Object? weight = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -90,7 +90,7 @@ abstract class _$$PokemonImplCopyWith<$Res> implements $PokemonCopyWith<$Res> {
       __$$PokemonImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String? url, int? height, int? weight});
+  $Res call({String? id, String name, String? url, int? height, int? weight});
 }
 
 /// @nodoc
@@ -104,17 +104,17 @@ class __$$PokemonImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = null,
     Object? url = freezed,
     Object? height = freezed,
     Object? weight = freezed,
   }) {
     return _then(_$PokemonImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -137,16 +137,15 @@ class __$$PokemonImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PokemonImpl implements _Pokemon {
-  _$PokemonImpl(
-      {this.id = '0', this.name = '', this.url, this.height, this.weight});
+class _$PokemonImpl extends _Pokemon {
+  _$PokemonImpl({this.id, this.name = '', this.url, this.height, this.weight})
+      : super._();
 
   factory _$PokemonImpl.fromJson(Map<String, dynamic> json) =>
       _$$PokemonImplFromJson(json);
 
   @override
-  @JsonKey()
-  final String id;
+  final String? id;
   @override
   @JsonKey()
   final String name;
@@ -192,18 +191,19 @@ class _$PokemonImpl implements _Pokemon {
   }
 }
 
-abstract class _Pokemon implements Pokemon {
+abstract class _Pokemon extends Pokemon {
   factory _Pokemon(
-      {final String id,
+      {final String? id,
       final String name,
       final String? url,
       final int? height,
       final int? weight}) = _$PokemonImpl;
+  _Pokemon._() : super._();
 
   factory _Pokemon.fromJson(Map<String, dynamic> json) = _$PokemonImpl.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   String get name;
   @override

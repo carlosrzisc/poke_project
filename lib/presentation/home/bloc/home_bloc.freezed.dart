@@ -22,6 +22,8 @@ mixin _$HomeState {
     required TResult Function() loadInProgress,
     required TResult Function(List<Pokemon> pokemonList) loadSuccess,
     required TResult Function() loadFailure,
+    required TResult Function(Pokemon pokemon) pokemonFound,
+    required TResult Function() pokemonNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,8 @@ mixin _$HomeState {
     TResult? Function()? loadInProgress,
     TResult? Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult? Function()? loadFailure,
+    TResult? Function(Pokemon pokemon)? pokemonFound,
+    TResult? Function()? pokemonNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,8 @@ mixin _$HomeState {
     TResult Function()? loadInProgress,
     TResult Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult Function()? loadFailure,
+    TResult Function(Pokemon pokemon)? pokemonFound,
+    TResult Function()? pokemonNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +53,8 @@ mixin _$HomeState {
     required TResult Function(LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(PokemonFound value) pokemonFound,
+    required TResult Function(PokemonNotFound value) pokemonNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +63,8 @@ mixin _$HomeState {
     TResult? Function(LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(PokemonFound value)? pokemonFound,
+    TResult? Function(PokemonNotFound value)? pokemonNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +73,8 @@ mixin _$HomeState {
     TResult Function(LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(PokemonFound value)? pokemonFound,
+    TResult Function(PokemonNotFound value)? pokemonNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +139,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loadInProgress,
     required TResult Function(List<Pokemon> pokemonList) loadSuccess,
     required TResult Function() loadFailure,
+    required TResult Function(Pokemon pokemon) pokemonFound,
+    required TResult Function() pokemonNotFound,
   }) {
     return initial();
   }
@@ -138,6 +152,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loadInProgress,
     TResult? Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult? Function()? loadFailure,
+    TResult? Function(Pokemon pokemon)? pokemonFound,
+    TResult? Function()? pokemonNotFound,
   }) {
     return initial?.call();
   }
@@ -149,6 +165,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loadInProgress,
     TResult Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult Function()? loadFailure,
+    TResult Function(Pokemon pokemon)? pokemonFound,
+    TResult Function()? pokemonNotFound,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -164,6 +182,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(PokemonFound value) pokemonFound,
+    required TResult Function(PokemonNotFound value) pokemonNotFound,
   }) {
     return initial(this);
   }
@@ -175,6 +195,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(PokemonFound value)? pokemonFound,
+    TResult? Function(PokemonNotFound value)? pokemonNotFound,
   }) {
     return initial?.call(this);
   }
@@ -186,6 +208,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(PokemonFound value)? pokemonFound,
+    TResult Function(PokemonNotFound value)? pokemonNotFound,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -241,6 +265,8 @@ class _$LoadInProgressImpl implements LoadInProgress {
     required TResult Function() loadInProgress,
     required TResult Function(List<Pokemon> pokemonList) loadSuccess,
     required TResult Function() loadFailure,
+    required TResult Function(Pokemon pokemon) pokemonFound,
+    required TResult Function() pokemonNotFound,
   }) {
     return loadInProgress();
   }
@@ -252,6 +278,8 @@ class _$LoadInProgressImpl implements LoadInProgress {
     TResult? Function()? loadInProgress,
     TResult? Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult? Function()? loadFailure,
+    TResult? Function(Pokemon pokemon)? pokemonFound,
+    TResult? Function()? pokemonNotFound,
   }) {
     return loadInProgress?.call();
   }
@@ -263,6 +291,8 @@ class _$LoadInProgressImpl implements LoadInProgress {
     TResult Function()? loadInProgress,
     TResult Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult Function()? loadFailure,
+    TResult Function(Pokemon pokemon)? pokemonFound,
+    TResult Function()? pokemonNotFound,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -278,6 +308,8 @@ class _$LoadInProgressImpl implements LoadInProgress {
     required TResult Function(LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(PokemonFound value) pokemonFound,
+    required TResult Function(PokemonNotFound value) pokemonNotFound,
   }) {
     return loadInProgress(this);
   }
@@ -289,6 +321,8 @@ class _$LoadInProgressImpl implements LoadInProgress {
     TResult? Function(LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(PokemonFound value)? pokemonFound,
+    TResult? Function(PokemonNotFound value)? pokemonNotFound,
   }) {
     return loadInProgress?.call(this);
   }
@@ -300,6 +334,8 @@ class _$LoadInProgressImpl implements LoadInProgress {
     TResult Function(LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(PokemonFound value)? pokemonFound,
+    TResult Function(PokemonNotFound value)? pokemonNotFound,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -389,6 +425,8 @@ class _$LoadSuccessImpl implements _LoadSuccess {
     required TResult Function() loadInProgress,
     required TResult Function(List<Pokemon> pokemonList) loadSuccess,
     required TResult Function() loadFailure,
+    required TResult Function(Pokemon pokemon) pokemonFound,
+    required TResult Function() pokemonNotFound,
   }) {
     return loadSuccess(pokemonList);
   }
@@ -400,6 +438,8 @@ class _$LoadSuccessImpl implements _LoadSuccess {
     TResult? Function()? loadInProgress,
     TResult? Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult? Function()? loadFailure,
+    TResult? Function(Pokemon pokemon)? pokemonFound,
+    TResult? Function()? pokemonNotFound,
   }) {
     return loadSuccess?.call(pokemonList);
   }
@@ -411,6 +451,8 @@ class _$LoadSuccessImpl implements _LoadSuccess {
     TResult Function()? loadInProgress,
     TResult Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult Function()? loadFailure,
+    TResult Function(Pokemon pokemon)? pokemonFound,
+    TResult Function()? pokemonNotFound,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -426,6 +468,8 @@ class _$LoadSuccessImpl implements _LoadSuccess {
     required TResult Function(LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(PokemonFound value) pokemonFound,
+    required TResult Function(PokemonNotFound value) pokemonNotFound,
   }) {
     return loadSuccess(this);
   }
@@ -437,6 +481,8 @@ class _$LoadSuccessImpl implements _LoadSuccess {
     TResult? Function(LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(PokemonFound value)? pokemonFound,
+    TResult? Function(PokemonNotFound value)? pokemonNotFound,
   }) {
     return loadSuccess?.call(this);
   }
@@ -448,6 +494,8 @@ class _$LoadSuccessImpl implements _LoadSuccess {
     TResult Function(LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(PokemonFound value)? pokemonFound,
+    TResult Function(PokemonNotFound value)? pokemonNotFound,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -509,6 +557,8 @@ class _$LoadFailureImpl implements _LoadFailure {
     required TResult Function() loadInProgress,
     required TResult Function(List<Pokemon> pokemonList) loadSuccess,
     required TResult Function() loadFailure,
+    required TResult Function(Pokemon pokemon) pokemonFound,
+    required TResult Function() pokemonNotFound,
   }) {
     return loadFailure();
   }
@@ -520,6 +570,8 @@ class _$LoadFailureImpl implements _LoadFailure {
     TResult? Function()? loadInProgress,
     TResult? Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult? Function()? loadFailure,
+    TResult? Function(Pokemon pokemon)? pokemonFound,
+    TResult? Function()? pokemonNotFound,
   }) {
     return loadFailure?.call();
   }
@@ -531,6 +583,8 @@ class _$LoadFailureImpl implements _LoadFailure {
     TResult Function()? loadInProgress,
     TResult Function(List<Pokemon> pokemonList)? loadSuccess,
     TResult Function()? loadFailure,
+    TResult Function(Pokemon pokemon)? pokemonFound,
+    TResult Function()? pokemonNotFound,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
@@ -546,6 +600,8 @@ class _$LoadFailureImpl implements _LoadFailure {
     required TResult Function(LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(PokemonFound value) pokemonFound,
+    required TResult Function(PokemonNotFound value) pokemonNotFound,
   }) {
     return loadFailure(this);
   }
@@ -557,6 +613,8 @@ class _$LoadFailureImpl implements _LoadFailure {
     TResult? Function(LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(PokemonFound value)? pokemonFound,
+    TResult? Function(PokemonNotFound value)? pokemonNotFound,
   }) {
     return loadFailure?.call(this);
   }
@@ -568,6 +626,8 @@ class _$LoadFailureImpl implements _LoadFailure {
     TResult Function(LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(PokemonFound value)? pokemonFound,
+    TResult Function(PokemonNotFound value)? pokemonNotFound,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
@@ -582,23 +642,319 @@ abstract class _LoadFailure implements HomeState {
 }
 
 /// @nodoc
+abstract class _$$PokemonFoundImplCopyWith<$Res> {
+  factory _$$PokemonFoundImplCopyWith(
+          _$PokemonFoundImpl value, $Res Function(_$PokemonFoundImpl) then) =
+      __$$PokemonFoundImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Pokemon pokemon});
+
+  $PokemonCopyWith<$Res> get pokemon;
+}
+
+/// @nodoc
+class __$$PokemonFoundImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$PokemonFoundImpl>
+    implements _$$PokemonFoundImplCopyWith<$Res> {
+  __$$PokemonFoundImplCopyWithImpl(
+      _$PokemonFoundImpl _value, $Res Function(_$PokemonFoundImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pokemon = null,
+  }) {
+    return _then(_$PokemonFoundImpl(
+      null == pokemon
+          ? _value.pokemon
+          : pokemon // ignore: cast_nullable_to_non_nullable
+              as Pokemon,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PokemonCopyWith<$Res> get pokemon {
+    return $PokemonCopyWith<$Res>(_value.pokemon, (value) {
+      return _then(_value.copyWith(pokemon: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$PokemonFoundImpl implements PokemonFound {
+  const _$PokemonFoundImpl(this.pokemon);
+
+  @override
+  final Pokemon pokemon;
+
+  @override
+  String toString() {
+    return 'HomeState.pokemonFound(pokemon: $pokemon)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PokemonFoundImpl &&
+            (identical(other.pokemon, pokemon) || other.pokemon == pokemon));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pokemon);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PokemonFoundImplCopyWith<_$PokemonFoundImpl> get copyWith =>
+      __$$PokemonFoundImplCopyWithImpl<_$PokemonFoundImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Pokemon> pokemonList) loadSuccess,
+    required TResult Function() loadFailure,
+    required TResult Function(Pokemon pokemon) pokemonFound,
+    required TResult Function() pokemonNotFound,
+  }) {
+    return pokemonFound(pokemon);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Pokemon> pokemonList)? loadSuccess,
+    TResult? Function()? loadFailure,
+    TResult? Function(Pokemon pokemon)? pokemonFound,
+    TResult? Function()? pokemonNotFound,
+  }) {
+    return pokemonFound?.call(pokemon);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Pokemon> pokemonList)? loadSuccess,
+    TResult Function()? loadFailure,
+    TResult Function(Pokemon pokemon)? pokemonFound,
+    TResult Function()? pokemonNotFound,
+    required TResult orElse(),
+  }) {
+    if (pokemonFound != null) {
+      return pokemonFound(pokemon);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(PokemonFound value) pokemonFound,
+    required TResult Function(PokemonNotFound value) pokemonNotFound,
+  }) {
+    return pokemonFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(PokemonFound value)? pokemonFound,
+    TResult? Function(PokemonNotFound value)? pokemonNotFound,
+  }) {
+    return pokemonFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(PokemonFound value)? pokemonFound,
+    TResult Function(PokemonNotFound value)? pokemonNotFound,
+    required TResult orElse(),
+  }) {
+    if (pokemonFound != null) {
+      return pokemonFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PokemonFound implements HomeState {
+  const factory PokemonFound(final Pokemon pokemon) = _$PokemonFoundImpl;
+
+  Pokemon get pokemon;
+  @JsonKey(ignore: true)
+  _$$PokemonFoundImplCopyWith<_$PokemonFoundImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PokemonNotFoundImplCopyWith<$Res> {
+  factory _$$PokemonNotFoundImplCopyWith(_$PokemonNotFoundImpl value,
+          $Res Function(_$PokemonNotFoundImpl) then) =
+      __$$PokemonNotFoundImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PokemonNotFoundImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$PokemonNotFoundImpl>
+    implements _$$PokemonNotFoundImplCopyWith<$Res> {
+  __$$PokemonNotFoundImplCopyWithImpl(
+      _$PokemonNotFoundImpl _value, $Res Function(_$PokemonNotFoundImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PokemonNotFoundImpl implements PokemonNotFound {
+  const _$PokemonNotFoundImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.pokemonNotFound()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PokemonNotFoundImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Pokemon> pokemonList) loadSuccess,
+    required TResult Function() loadFailure,
+    required TResult Function(Pokemon pokemon) pokemonFound,
+    required TResult Function() pokemonNotFound,
+  }) {
+    return pokemonNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Pokemon> pokemonList)? loadSuccess,
+    TResult? Function()? loadFailure,
+    TResult? Function(Pokemon pokemon)? pokemonFound,
+    TResult? Function()? pokemonNotFound,
+  }) {
+    return pokemonNotFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Pokemon> pokemonList)? loadSuccess,
+    TResult Function()? loadFailure,
+    TResult Function(Pokemon pokemon)? pokemonFound,
+    TResult Function()? pokemonNotFound,
+    required TResult orElse(),
+  }) {
+    if (pokemonNotFound != null) {
+      return pokemonNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(PokemonFound value) pokemonFound,
+    required TResult Function(PokemonNotFound value) pokemonNotFound,
+  }) {
+    return pokemonNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(PokemonFound value)? pokemonFound,
+    TResult? Function(PokemonNotFound value)? pokemonNotFound,
+  }) {
+    return pokemonNotFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(PokemonFound value)? pokemonFound,
+    TResult Function(PokemonNotFound value)? pokemonNotFound,
+    required TResult orElse(),
+  }) {
+    if (pokemonNotFound != null) {
+      return pokemonNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PokemonNotFound implements HomeState {
+  const factory PokemonNotFound() = _$PokemonNotFoundImpl;
+}
+
+/// @nodoc
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function() listenPokemonList,
+    required TResult Function(String pokemon) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function()? listenPokemonList,
+    TResult? Function(String pokemon)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function()? listenPokemonList,
+    TResult Function(String pokemon)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -606,18 +962,21 @@ mixin _$HomeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Load value) load,
     required TResult Function(_ListenPokemonList value) listenPokemonList,
+    required TResult Function(_Search value) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Load value)? load,
     TResult? Function(_ListenPokemonList value)? listenPokemonList,
+    TResult? Function(_Search value)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Load value)? load,
     TResult Function(_ListenPokemonList value)? listenPokemonList,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -679,6 +1038,7 @@ class _$LoadImpl implements _Load {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function() listenPokemonList,
+    required TResult Function(String pokemon) search,
   }) {
     return load();
   }
@@ -688,6 +1048,7 @@ class _$LoadImpl implements _Load {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function()? listenPokemonList,
+    TResult? Function(String pokemon)? search,
   }) {
     return load?.call();
   }
@@ -697,6 +1058,7 @@ class _$LoadImpl implements _Load {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function()? listenPokemonList,
+    TResult Function(String pokemon)? search,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -710,6 +1072,7 @@ class _$LoadImpl implements _Load {
   TResult map<TResult extends Object?>({
     required TResult Function(_Load value) load,
     required TResult Function(_ListenPokemonList value) listenPokemonList,
+    required TResult Function(_Search value) search,
   }) {
     return load(this);
   }
@@ -719,6 +1082,7 @@ class _$LoadImpl implements _Load {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Load value)? load,
     TResult? Function(_ListenPokemonList value)? listenPokemonList,
+    TResult? Function(_Search value)? search,
   }) {
     return load?.call(this);
   }
@@ -728,6 +1092,7 @@ class _$LoadImpl implements _Load {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Load value)? load,
     TResult Function(_ListenPokemonList value)? listenPokemonList,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -781,6 +1146,7 @@ class _$ListenPokemonListImpl implements _ListenPokemonList {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function() listenPokemonList,
+    required TResult Function(String pokemon) search,
   }) {
     return listenPokemonList();
   }
@@ -790,6 +1156,7 @@ class _$ListenPokemonListImpl implements _ListenPokemonList {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function()? listenPokemonList,
+    TResult? Function(String pokemon)? search,
   }) {
     return listenPokemonList?.call();
   }
@@ -799,6 +1166,7 @@ class _$ListenPokemonListImpl implements _ListenPokemonList {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function()? listenPokemonList,
+    TResult Function(String pokemon)? search,
     required TResult orElse(),
   }) {
     if (listenPokemonList != null) {
@@ -812,6 +1180,7 @@ class _$ListenPokemonListImpl implements _ListenPokemonList {
   TResult map<TResult extends Object?>({
     required TResult Function(_Load value) load,
     required TResult Function(_ListenPokemonList value) listenPokemonList,
+    required TResult Function(_Search value) search,
   }) {
     return listenPokemonList(this);
   }
@@ -821,6 +1190,7 @@ class _$ListenPokemonListImpl implements _ListenPokemonList {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Load value)? load,
     TResult? Function(_ListenPokemonList value)? listenPokemonList,
+    TResult? Function(_Search value)? search,
   }) {
     return listenPokemonList?.call(this);
   }
@@ -830,6 +1200,7 @@ class _$ListenPokemonListImpl implements _ListenPokemonList {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Load value)? load,
     TResult Function(_ListenPokemonList value)? listenPokemonList,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) {
     if (listenPokemonList != null) {
@@ -841,4 +1212,143 @@ class _$ListenPokemonListImpl implements _ListenPokemonList {
 
 abstract class _ListenPokemonList implements HomeEvent {
   const factory _ListenPokemonList() = _$ListenPokemonListImpl;
+}
+
+/// @nodoc
+abstract class _$$SearchImplCopyWith<$Res> {
+  factory _$$SearchImplCopyWith(
+          _$SearchImpl value, $Res Function(_$SearchImpl) then) =
+      __$$SearchImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String pokemon});
+}
+
+/// @nodoc
+class __$$SearchImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$SearchImpl>
+    implements _$$SearchImplCopyWith<$Res> {
+  __$$SearchImplCopyWithImpl(
+      _$SearchImpl _value, $Res Function(_$SearchImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pokemon = null,
+  }) {
+    return _then(_$SearchImpl(
+      null == pokemon
+          ? _value.pokemon
+          : pokemon // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchImpl implements _Search {
+  const _$SearchImpl(this.pokemon);
+
+  @override
+  final String pokemon;
+
+  @override
+  String toString() {
+    return 'HomeEvent.search(pokemon: $pokemon)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchImpl &&
+            (identical(other.pokemon, pokemon) || other.pokemon == pokemon));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pokemon);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+      __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() listenPokemonList,
+    required TResult Function(String pokemon) search,
+  }) {
+    return search(pokemon);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? listenPokemonList,
+    TResult? Function(String pokemon)? search,
+  }) {
+    return search?.call(pokemon);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? listenPokemonList,
+    TResult Function(String pokemon)? search,
+    required TResult orElse(),
+  }) {
+    if (search != null) {
+      return search(pokemon);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Load value) load,
+    required TResult Function(_ListenPokemonList value) listenPokemonList,
+    required TResult Function(_Search value) search,
+  }) {
+    return search(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Load value)? load,
+    TResult? Function(_ListenPokemonList value)? listenPokemonList,
+    TResult? Function(_Search value)? search,
+  }) {
+    return search?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Load value)? load,
+    TResult Function(_ListenPokemonList value)? listenPokemonList,
+    TResult Function(_Search value)? search,
+    required TResult orElse(),
+  }) {
+    if (search != null) {
+      return search(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Search implements HomeEvent {
+  const factory _Search(final String pokemon) = _$SearchImpl;
+
+  String get pokemon;
+  @JsonKey(ignore: true)
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

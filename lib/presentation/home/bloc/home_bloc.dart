@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -13,6 +15,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(this._pokemonRepository) : super(const HomeState.initial()) {
     on<_Load>(_onLoad);
     on<_ListenPokemonList>(_onListenPokemonList);
+    on<_Search>(_onSeachPokemon);
   }
   final PokemonRepository _pokemonRepository;
 
@@ -21,13 +24,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     emit(const HomeState.loadInProgress());
     _pokemonRepository.loadMorePokemon();
-    // emit(const HomeState.loadInProgress());
-    // try {
-    //   final pokemonList = await _pokemonRepository.getPokemonList();
-    //   emit(HomeState.loadSuccess(pokemonList));
-    // } catch (e) {
-    //   emit(const HomeState.loadFailure());
-    // }
   }
 
   Future<void> _onListenPokemonList(_ListenPokemonList event, Emitter<HomeState> emit) async {
@@ -36,5 +32,17 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       onData: HomeState.loadSuccess,
       onError: (error, stackTrace) => const HomeState.loadFailure(),
     );
+  }
+
+  Future<void> _onSeachPokemon(_Search event, Emitter<HomeState> emit) async {
+    if (state is LoadInProgress) return;
+
+    emit(const HomeState.loadInProgress());
+    try {
+      final pokemon = await _pokemonRepository.searchPokemon(event.pokemon.toLowerCase());
+      emit(HomeState.pokemonFound(pokemon));
+    } catch (_) {
+      emit(const HomeState.pokemonNotFound());
+    }
   }
 }

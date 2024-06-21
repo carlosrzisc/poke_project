@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:poke_project/presentation/home/bloc/home_bloc.dart';
+import 'package:poke_project/presentation/home/view/widgets/pokemon_searcher.dart';
 import 'package:poke_project/presentation/home/view/widgets/pokemons_grid.dart';
+import 'package:poke_project/routing/app_router.dart';
 
 @RoutePage()
 class HomeScreen extends StatelessWidget {
@@ -23,16 +25,46 @@ class HomeScreen extends StatelessWidget {
         },
         child: Stack(
           children: [
-            BlocBuilder<HomeBloc, HomeState>(
-              buildWhen: (previous, current) => current != const LoadInProgress(),
+            BlocConsumer<HomeBloc, HomeState>(
+              buildWhen: (previous, current) =>
+                  current != const LoadInProgress() && current is! PokemonFound && current is! PokemonNotFound,
               builder: (context, state) {
-                return state.maybeWhen(
-                  orElse: () => const SizedBox.shrink(),
-                  // loadInProgress: () => const Center(child: CircularProgressIndicator()),
-                  loadSuccess: PokemonsGrid.new,
-                  // equivalente a:
-                  // loadSuccess: (items) => PokemonsGrid(items),
-                  loadFailure: () => const Center(child: Text('Failed to load data')),
+                return Stack(
+                  children: [
+                    state.maybeWhen(
+                      orElse: () => const SizedBox.shrink(),
+                      // loadInProgress: () => const Center(child: CircularProgressIndicator()),
+                      loadSuccess: PokemonsGrid.new,
+                      // equivalente a:
+                      // loadSuccess: (items) => PokemonsGrid(items),
+                      loadFailure: () => const Center(child: Text('Failed to load data')),
+                    ),
+                    PokemonSearcher(
+                      onSearch: (text) => context.read<HomeBloc>().add(HomeEvent.search(text)),
+                    )
+                  ],
+                );
+              },
+              listener: (BuildContext context, HomeState state) {
+                state.maybeWhen(
+                  pokemonFound: (pokemon) {
+                    context.router.push(PokemonDetailsRoute(pokemon: pokemon));
+                  },
+                  pokemonNotFound: () {
+                    return ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          'Pokemon not found',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                  },
+                  orElse: () {},
                 );
               },
             ),

@@ -55,7 +55,7 @@ class _PokemonApi implements PokemonApi {
   }
 
   @override
-  Future<Pokemon> getPokemon(int id) async {
+  Future<Pokemon> getPokemon(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

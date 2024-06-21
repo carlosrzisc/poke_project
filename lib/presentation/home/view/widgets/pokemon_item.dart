@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:poke_project/model/pokemon.dart';
+import 'package:poke_project/routing/app_router.dart';
 
 class PokemonItem extends StatelessWidget {
   const PokemonItem({
@@ -12,30 +14,36 @@ class PokemonItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        // border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.grey,
-            blurRadius: 5,
-          ),
-        ],
-      ),
-      child: ListTile(
-        title: Row(
-          children: [
-            BadgeNumber(pokemon.pokemonId.toString()),
-            Text(pokemon.name),
+    return GestureDetector(
+      onTap: () => context.router.push(PokemonDetailsRoute(pokemon: pokemon)),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          // border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.grey,
+              blurRadius: 5,
+            ),
           ],
         ),
-        subtitle: pokemon.image != null
-            ? Image(
-                image: CachedNetworkImageProvider(pokemon.image!),
-              )
-            : const SizedBox.shrink(),
+        child: ListTile(
+          title: Row(
+            children: [
+              BadgeNumber(pokemon.pokemonId.toString()),
+              Text(pokemon.name),
+            ],
+          ),
+          subtitle: pokemon.image != null
+              ? Hero(
+                  tag: 'pokemon-${pokemon.pokemonId}',
+                  child: Image(
+                    image: CachedNetworkImageProvider(pokemon.image!),
+                  ),
+                )
+              : const SizedBox.shrink(),
+        ),
       ),
     );
   }

@@ -39,6 +39,9 @@ class PokemonRepositoryImpl implements PokemonRepository {
   @override
   Stream<List<Pokemon>> get pokemonList => _pokemonStreamController.stream;
 
+  @override
+  Future<Pokemon> getPokemon(int id) => _pokemonApi.getPokemon(id);
+
   // @override
   // Future<List<Pokemon>> getPokemonList(int offset, int limit) async {
   //   final response = await _pokemonApi.getPokemonList();

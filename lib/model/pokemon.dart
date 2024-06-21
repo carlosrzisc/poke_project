@@ -6,7 +6,7 @@ part 'pokemon.g.dart';
 @freezed
 class Pokemon with _$Pokemon {
   factory Pokemon({
-    String? id,
+    int? id,
     @Default('') String name,
     String? url,
     int? height,
